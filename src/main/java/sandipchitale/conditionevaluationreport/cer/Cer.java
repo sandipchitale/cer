@@ -34,7 +34,7 @@ public class Cer implements CommandLineRunner {
                     System.out.println(genIndent(4, " \uD83D\uDEC8") + " Message: " + messageAndConditionDescriptor.getMessage());
                 });
             });
-            System.out.println(" │  └─⛔ Negative Matches (at least one did not match): " + contextName);
+            System.out.println(genIndent(2, "⛔") + " Negative Matches (at least one did not match): " + contextName);
             contextConditionsDescriptor.getNegativeMatches().forEach((String conditionName, ConditionsReportEndpoint.MessageAndConditionsDescriptor messageAndConditionsDescriptor) -> {
                 if (!messageAndConditionsDescriptor.getMatched().isEmpty() || !messageAndConditionsDescriptor.getNotMatched().isEmpty()) {
                     System.out.println(genIndent(3, "\uD83D\uDC4E") + " Condition Name: " + conditionName);
